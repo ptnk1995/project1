@@ -1,0 +1,11 @@
+I"(function() {
+  $(document).on('turbolinks:load', function() {
+    return $('.tiptext').mouseover(function() {
+      $(this).children('.description').show();
+    }).mouseout(function() {
+      $(this).children('.description').hide();
+    });
+  });
+
+}).call(this);
+:ET

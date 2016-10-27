@@ -1,0 +1,8 @@
+<ul>
+  <% f.object.question.answers.each do |answer| %>
+        <li>
+        <%= f.radio_button :answer_id, answer.id, checked: false %>
+          <%= answer.content %>
+        </li>
+      <% end %>
+</ul>

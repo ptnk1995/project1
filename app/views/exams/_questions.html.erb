@@ -1,0 +1,19 @@
+<%= form_for @exam do |f| %>
+  <ol>
+    <%= f.fields_for :question_exams do |ff| %>
+      <li>
+        <%= ff.object.question.content %>
+        <ul>
+          <% ff.object.question.answers.each do |answer| %>
+            <li>
+              <%= ff.radio_button :answer_id, answer.id, checked: false %>
+                <%= answer.content %>
+            </li>
+          <% end %>
+        </ul>
+        <% end %>
+      </li>
+  </ol>
+  <%= f.submit "submit",
+    class: "btn btn-success pull-right" %>
+<% end %>
